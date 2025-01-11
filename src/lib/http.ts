@@ -21,7 +21,7 @@ export function httpPut(url: string, body?: any) {
     })
 }
 
-export async function appFetch<TModel>(httpCallback: () => Promise<Response>) {
+export async function wrapFetch<TModel>(httpCallback: () => Promise<Response>) {
     const response = await httpCallback()
 
     if (response.status === 404) {

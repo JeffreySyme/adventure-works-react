@@ -1,4 +1,4 @@
-import { appFetch, httpGet, httpPost, httpPut } from '../http'
+import { wrapFetch, httpGet, httpPost, httpPut } from '../http'
 import { QueryResult } from './query-result'
 
 interface ODataQueryResponse {
@@ -6,7 +6,7 @@ interface ODataQueryResponse {
 }
 
 export async function query<TModel>(url: string) {
-    const result = await appFetch<ODataQueryResponse>(
+    const result = await wrapFetch<ODataQueryResponse>(
         () => httpGet(url)
     )
 
@@ -19,14 +19,14 @@ export async function query<TModel>(url: string) {
 }
 export function get<TModel>(url: string, parameters?: any) {
     if (!parameters) {
-        return appFetch<TModel>(() => httpGet(url))
+        return wrapFetch<TModel>(() => httpGet(url))
     }
 
-    return appFetch<TModel>(() => httpPost(url, parameters))
+    return wrapFetch<TModel>(() => httpPost(url, parameters))
 }
-export function create<TModel>(url: string, model: TModel) {
-    return appFetch<TModel>(() => httpPost(url, model))
+export function create<TResult>(url: string, model: any) {
+    return wrapFetch<TResult>(() => httpPost(url, model))
 }
-export function update<TModel>(url: string, model: TModel) {
-    return appFetch<TModel>(() => httpPut(url, model))
+export function update<TResult>(url: string, model: any) {
+    return wrapFetch<TResult>(() => httpPut(url, model))
 }
