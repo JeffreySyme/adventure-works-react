@@ -20,3 +20,15 @@ export function httpPut(url: string, body?: any) {
         credentials: 'include',
     })
 }
+
+export async function appFetch<TModel>(httpCallback: () => Promise<Response>) {
+    const response = await httpCallback()
+
+    if (response.status === 404) {
+        return null
+    } else if (!response.ok) {
+        throw new Error('An error occurred.')
+    }
+
+    return await response.json() as TModel
+}
