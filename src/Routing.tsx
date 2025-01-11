@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router'
-import Home from './home/Page'
-import Customers from './customers/Page'
-import ProductCategories from './product-categories/Page'
-import ProductModels from './product-models/Page'
-import Products from './products/Page'
-import SalesOrders from './sales-orders/Page'
+import {
+    Customers,
+    Home,
+    ProductCategories,
+    ProductModels,
+    Products,
+    SalesOrders,
+} from './routes'
 
 export default function Routing() {
     return (

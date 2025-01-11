@@ -1,9 +1,9 @@
 import usePage from './use-page'
 
 export default function Page() {
-    const {} = usePage()
+    usePage()
 
     return (
-        <div>Customers</div>
+        <div>Product Models</div>
     )
 }
