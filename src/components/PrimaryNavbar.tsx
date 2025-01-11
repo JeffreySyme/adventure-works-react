@@ -3,8 +3,8 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 export default function PrimaryNavbar() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
-            <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Container fluid>
+                <Navbar.Brand href="#home">Adventure Works</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
