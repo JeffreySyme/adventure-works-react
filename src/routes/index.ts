@@ -1,5 +1,5 @@
 import Customers from './customers/Page'
-import Home from './home/Page'
+import Home from './Page'
 import ProductCategories from './product-categories/Page'
 import ProductModels from './product-models/Page'
 import Products from './products/Page'
