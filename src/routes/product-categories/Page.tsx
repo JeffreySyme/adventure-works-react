@@ -1,23 +1,20 @@
+import { ProductCategoriesTable } from './components'
 import usePage from './use-page'
 
 export default function Page() {
     const {
-        productCategories,
+        data,
     } = usePage()
 
-    if (productCategories === undefined) {
+    if (data === undefined) {
         return <div>Loading...</div>
-    } else if (productCategories === null) {
+    } else if (data === null) {
         return <div>Not Found</div>
     }
 
     return (
         <>
-            {
-                productCategories.data.map((d) => (
-                    <div>{d.productCategoryId}</div>
-                ))
-            }
+            <ProductCategoriesTable data={data} />
         </>
     )
 }

@@ -2,18 +2,18 @@ import { useCallback, useEffect, useState } from 'react'
 import { ProductCategoryModel, queryProductCategories, QueryResult } from '../../lib'
 
 export default function usePage() {
-    const [productCategories, setProductCategories] = useState<QueryResult<ProductCategoryModel> | null>()
+    const [data, setData] = useState<QueryResult<ProductCategoryModel> | null>()
 
-    const getProductCategories = useCallback(async () => {
-        setProductCategories(await queryProductCategories())
+    const getData = useCallback(async () => {
+        setData(await queryProductCategories())
     }, [])
 
-    useEffect(() => { getProductCategories() }, [getProductCategories])
+    useEffect(() => { getData() }, [getData])
     useEffect(() => {
         document.title = 'Adventure Works - Product Categories'
     }, [])
 
     return {
-        productCategories,
+        data,
     }
 }
