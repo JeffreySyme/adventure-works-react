@@ -1,4 +1,4 @@
-import { PrimaryNavbar } from './components'
+import { PrimaryNavbar, SecondaryNavbar } from './components'
 import Routing from './Routing'
 import useApp from './use-app'
 
@@ -8,6 +8,7 @@ export default function App() {
   return (
     <>
       <PrimaryNavbar />
+      <SecondaryNavbar />
       <Routing />
     </>
   )

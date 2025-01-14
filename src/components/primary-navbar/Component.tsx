@@ -11,7 +11,7 @@ export default function Component() {
 
     return (
         <>
-            <Navbar bg="primary-subtle" data-bs-theme="dark" expand="lg" fixed="top">
+            <Navbar bg="primary-subtle" data-bs-theme="dark" expand="lg" sticky="top" className="border-bottom">
                 <Container fluid>
                     <Navbar.Brand as={Link} to="/">Adventure Works</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
