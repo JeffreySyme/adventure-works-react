@@ -2,7 +2,6 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router'
 import SettingsOffcanvas from '../settings-offcanvas/Component'
 import useComponent from './use-component'
-import { Settings } from '../../routes/store'
 
 export default function Component() {
     const {
@@ -12,7 +11,7 @@ export default function Component() {
 
     return (
         <>
-            <Navbar color="primary-subtle" expand="lg" className="bg-body-tertiary" fixed="top">
+            <Navbar bg="primary-subtle" data-bs-theme="dark" expand="lg" fixed="top">
                 <Container fluid>
                     <Navbar.Brand as={Link} to="/">Adventure Works</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
