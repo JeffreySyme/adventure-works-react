@@ -1,3 +1,4 @@
+import { Container } from 'react-bootstrap'
 import { ProductCategoriesTable } from './components'
 import usePage from './use-page'
 
@@ -13,8 +14,8 @@ export default function Page() {
     }
 
     return (
-        <>
+        <Container fluid>
             <ProductCategoriesTable data={data} />
-        </>
+        </Container>
     )
 }
