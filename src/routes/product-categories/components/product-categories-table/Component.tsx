@@ -5,11 +5,11 @@ export default function Component({
     data,
 }: ComponentProps) {
     return (
-        <Table>
+        <Table striped borderless hover>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Parent Product Category ID</th>
+                    <th>Parent ID</th>
                     <th>Name</th>
                     <th>Modified Date</th>
                 </tr>

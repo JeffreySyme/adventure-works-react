@@ -6,7 +6,7 @@ export default function Component({
     breadcrumbs,
 }: ComponentProps) {
     return (
-        <Navbar bg="primary-subtle" data-bs-theme="dark" sticky="top">
+        <Navbar bg="primary-subtle" data-bs-theme="dark">
             <Container fluid>
                 <Breadcrumb listProps={{ className: 'mb-0' }}>
                     {

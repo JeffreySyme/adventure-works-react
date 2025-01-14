@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
+import { useBreadcrumbs, useTitle } from '../../lib/hooks'
 
 export default function usePage() {
-    useEffect(() => {
-        document.title = 'Adventure Works - Sales Orders'
-    }, [])
+    useTitle('Sales Orders'),
+    useBreadcrumbs([
+        { text: 'Home', to: '/' },
+        { active: true, text: 'Sales Orders', to: '/sales-orders' },
+    ])
 }
