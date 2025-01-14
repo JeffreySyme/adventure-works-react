@@ -3,12 +3,12 @@ import Routing from './Routing'
 import useApp from './use-app'
 
 export default function App() {
-  useApp()
+   const { breadcrumbs } = useApp()
 
   return (
     <>
       <PrimaryNavbar />
-      <SecondaryNavbar />
+      <SecondaryNavbar breadcrumbs={breadcrumbs} />
       <Routing />
     </>
   )

@@ -3,6 +3,7 @@ import { useAppSelector } from './store'
 
 export default function useApp() {
     const settings = useAppSelector((state) => state.system.settings)
+    const breadcrumbs = useAppSelector((state) => state.system.breadcrumbs)
 
     const setBsTheme = useCallback(() => {
         const rootElement = document.documentElement
@@ -11,4 +12,8 @@ export default function useApp() {
     }, [settings])
 
     useEffect(() => setBsTheme(), [setBsTheme])
+
+    return {
+        breadcrumbs,
+    }
 }
