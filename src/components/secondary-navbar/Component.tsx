@@ -13,6 +13,7 @@ export default function Component({
                         breadcrumbs.map((b) => (
                             <BreadcrumbItem
                                 key={b.to}
+                                active={b.active}
                                 linkAs={Link}
                                 linkProps={{ to: b.to }}>
                                 {b.text}
