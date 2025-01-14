@@ -1,50 +1,7 @@
-# React + TypeScript + Vite
+# Adventure Works
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple front end built in React for browsing and updating records via an OData API with the Adventure Works database.
 
-Currently, two official plugins are available:
+Adventure Works is a sample database provided by Microsoft to demonstrate how to design a database in SQL Server. It is old by todays standards but I wanted to use something that is simple and publicly available. You can find more information here https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms. Please note I am using the lightweight version.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+This is meant to serve as a portfolio/demo to show off my background and passion for front-end development. It is an active work in progress that I contribute to almost daily. It currently uses React Bootstrap (Bootstrap 5), React Router, and Redux. I plan to add much more in the coming days/weeks/months.
