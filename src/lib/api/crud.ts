@@ -13,7 +13,7 @@ export async function query<TModel>(url: string) {
     return result
         ? {
             totalCount: result['@odata.count'],
-            data: result['value.count'],
+            data: result['value'],
         } as QueryResult<TModel>
         : null
 }
