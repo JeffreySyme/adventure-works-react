@@ -19,7 +19,7 @@ export default function Component({
                     data.data.map((d) => (
                         <tr key={d.productCategoryId}>
                             <td>{d.productCategoryId}</td>
-                            <td>{d.parentProductCategoryId}</td>
+                            <td>{d.parentProductCategoryId ? d.parentProductCategoryId : '-'}</td>
                             <td>{d.name}</td>
                             <td>{d.modifiedDate}</td>
                         </tr>
