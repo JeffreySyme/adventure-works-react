@@ -2,6 +2,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router'
 import SettingsOffcanvas from '../settings-offcanvas/Component'
 import useComponent from './use-component'
+import { Gear } from 'react-bootstrap-icons'
 
 export default function Component() {
     const {
@@ -23,7 +24,9 @@ export default function Component() {
                             <Nav.Link as={Link} to="/sales-orders">Sales Orders</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link onClick={toggleSettings}>Settings</Nav.Link>
+                            <Nav.Link onClick={toggleSettings}>
+                                <Gear />
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
