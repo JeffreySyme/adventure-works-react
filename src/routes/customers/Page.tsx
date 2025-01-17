@@ -1,9 +1,21 @@
+import { Container } from 'react-bootstrap'
 import usePage from './use-page'
+import { CustomersTable } from './components'
 
 export default function Page() {
-    usePage()
+    const {
+        data,
+    } = usePage()
+
+    if (data === undefined) {
+        return <div>Loading...</div>
+    } else if (data === null) {
+        return <div>Not Found</div>
+    }
 
     return (
-        <div>Customers</div>
+        <Container fluid>
+            <CustomersTable data={data} />
+        </Container>
     )
 }
