@@ -1,6 +1,6 @@
 import { useBreadcrumbs, useTitle } from '../../lib/hooks'
 
-export default function usePage() {
+export default function() {
     useTitle('Product Models')
     useBreadcrumbs([
         { text: 'Home', to: '/' },

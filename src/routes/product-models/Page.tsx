@@ -1,6 +1,6 @@
-import usePage from './use-page'
+import usePage from '../use-page'
 
-export default function Page() {
+export default function() {
     usePage()
 
     return (

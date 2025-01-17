@@ -1,11 +1,14 @@
+import { QueryOptions } from 'odata-query'
 import { getBaseUrl } from '../base-url'
 import { create, get, query, update } from '../crud'
 import { ProductModel } from './model'
 
 const products = 'Products'
 
-export function queryProducts() {
-    return query<ProductModel>(`${getBaseUrl()}/${products}?$count=true`)
+export type ProductsQuery = Partial<QueryOptions<ProductModel>>
+
+export function queryProducts(queryRequest: ProductsQuery) {
+    return query<ProductModel>(`${getBaseUrl()}/${products}${queryRequest}`)
 }
 
 export function findProduct(productId: number) {
