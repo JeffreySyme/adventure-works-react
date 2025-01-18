@@ -1,17 +1,17 @@
 import { ODataFetch, PageTitle } from '../../lib/components'
-import { getBaseUrl } from '../../lib/api/base-url'
-import buildQuery from 'odata-query'
 import usePage from './use-page'
 import { CustomerModel } from '../../lib'
 import { CustomersTable } from './components'
 
-export default function () {
+const modelName = 'Customers'
+
+export default function() {
     const { query } = usePage()
 
     return (
         <>
-            <PageTitle>Customers</PageTitle>
-            <ODataFetch url={`${getBaseUrl()}/Customers${buildQuery(query)}`}>
+            <PageTitle>{modelName}</PageTitle>
+            <ODataFetch name={modelName} query={query}>
                 {
                     (data: { value: CustomerModel[] }) => (
                         <CustomersTable data={data.value} />

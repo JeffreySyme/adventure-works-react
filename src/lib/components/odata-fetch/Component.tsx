@@ -1,10 +1,12 @@
+import { QueryOptions } from 'odata-query'
 import useComponent from './use-component'
 
 export default function({
-    url,
     children,
+    name,
+    query,
 }: ComponentProps) {
-    const { code, data } = useComponent(url)
+    const { code, data } = useComponent(name, query)
 
     if (data) {
         return children(data)
@@ -20,6 +22,7 @@ export default function({
 }
 
 interface ComponentProps {
-    url: string
     children: (data: any) => JSX.Element
+    name: string
+    query: Partial<QueryOptions<unknown>>
 }
