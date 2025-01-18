@@ -6,15 +6,18 @@ export default function({
     name,
     query,
 }: ComponentProps) {
-    const { code, data } = useComponent(name, query)
+    const {
+        data,
+        status,
+    } = useComponent(name, query)
 
     if (data) {
         return children(data)
-    } else if (code === 404) {
+    } else if (status === 404) {
         <div>Not Found</div>
-    } else if (code === 400) {
+    } else if (status === 400) {
         <div>Bad Request</div>
-    } else if (code === 500) {
+    } else if (status === 500) {
         <div>Internal Server Error</div>
     }
 
