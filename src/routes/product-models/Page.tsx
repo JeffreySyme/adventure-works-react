@@ -1,9 +1,13 @@
-import usePage from '../use-page'
+import { PageTitle } from '../../lib/components'
+import usePage from './use-page'
 
 export default function() {
     usePage()
 
     return (
-        <div>Product Models</div>
+        <>
+            <PageTitle>Product Models</PageTitle>
+            <div>Product models</div>
+        </>
     )
 }

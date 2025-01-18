@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CustomersQuery } from '../../lib'
-import { useBreadcrumbs, useTitle } from '../../lib/hooks'
+import { useBreadcrumbs } from '../../lib/hooks'
 
 const initialQuery: CustomersQuery = {
     skip: 0,
@@ -9,7 +9,6 @@ const initialQuery: CustomersQuery = {
 }
 
 export default function() {
-    useTitle('Customers')
     useBreadcrumbs([
         { text: 'Home', to: '/' },
         { active: true, text: 'Customers', to: '/customers' },

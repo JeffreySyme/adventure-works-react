@@ -1,4 +1,4 @@
-import { useBreadcrumbs, useTitle } from '../lib/hooks'
+import { useBreadcrumbs } from '../lib/hooks'
 
 export default function() {
     useBreadcrumbs([{
@@ -6,5 +6,4 @@ export default function() {
         text: 'Home',
         to: '/',
     }])
-    useTitle('Home')
 }

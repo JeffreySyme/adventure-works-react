@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useBreadcrumbs, useTitle } from '../../lib/hooks'
+import { useBreadcrumbs } from '../../lib/hooks'
 import { ProductsQuery } from '../../lib'
 
 const initialQuery: ProductsQuery = {
@@ -9,7 +9,6 @@ const initialQuery: ProductsQuery = {
 }
 
 export default function() {
-    useTitle('Products')
     useBreadcrumbs([
         { text: 'Home', to: '/' },
         { active: true, text: 'Products', to: '/products' },

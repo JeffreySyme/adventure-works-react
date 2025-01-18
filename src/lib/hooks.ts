@@ -14,9 +14,3 @@ export function useBreadcrumbs(items: BreadcrumbLink[]) {
         dispatch(setBreadcrumbs(breadcrumbs))
     }, [breadcrumbs, dispatch])
 }
-
-export function useTitle(title: string) {
-    useEffect(() => {
-        document.title = `Adventure Works - ${title}`
-    }, [title])
-}
