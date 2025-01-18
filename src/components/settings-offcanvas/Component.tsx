@@ -1,7 +1,7 @@
 import { Form, Offcanvas } from 'react-bootstrap'
 import useComponent from './use-componet'
 
-export default function Component({
+export default function({
     onHide,
     show,
 }: ComponentProps) {

@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { setSettings } from '../../routes/store'
 
-export default function useComponent() {
+export default function() {
     const settings = useAppSelector((state) => state.system.settings)
     const dispatch = useAppDispatch()
 

@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap'
 import { Link } from 'react-router'
 import usePage from './use-page'
 
-export default function Page() {
+export default function() {
     usePage()
 
     return (

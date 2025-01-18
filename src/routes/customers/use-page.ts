@@ -8,7 +8,7 @@ const initialQuery: CustomersQuery = {
     count: true,
 }
 
-export default function usePage() {
+export default function() {
     useTitle('Customers')
     useBreadcrumbs([
         { text: 'Home', to: '/' },

@@ -8,7 +8,7 @@ import {
     SalesOrders,
 } from './routes'
 
-export default function Routing() {
+export default function() {
     return (
         <Routes>
             <Route index element={<Home />} />

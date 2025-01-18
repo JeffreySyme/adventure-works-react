@@ -5,7 +5,7 @@ import usePage from './use-page'
 import { CustomerModel } from '../../lib'
 import { CustomersTable } from './components'
 
-export default function Page() {
+export default function() {
     const { query } = usePage()
 
     return (

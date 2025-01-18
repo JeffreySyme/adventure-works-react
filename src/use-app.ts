@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react'
 import { useAppSelector } from './store'
 
-export default function useApp() {
+export default function() {
     const settings = useAppSelector((state) => state.system.settings)
     const breadcrumbs = useAppSelector((state) => state.system.breadcrumbs)
 

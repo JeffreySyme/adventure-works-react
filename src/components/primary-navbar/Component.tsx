@@ -4,7 +4,7 @@ import SettingsOffcanvas from '../settings-offcanvas/Component'
 import useComponent from './use-component'
 import { Gear } from 'react-bootstrap-icons'
 
-export default function Component() {
+export default function() {
     const {
         showSettings,
         toggleSettings,

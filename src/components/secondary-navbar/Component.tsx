@@ -2,7 +2,7 @@ import { Breadcrumb, BreadcrumbItem, Container, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router'
 import { BreadcrumbLink } from '../../routes/store'
 
-export default function Component({
+export default function({
     breadcrumbs,
 }: ComponentProps) {
     return (

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-export default function useComponent() {
+export default function() {
     const [showSettings, setShowSettings] = useState(false)
 
     const toggleSettings = useCallback(() => {

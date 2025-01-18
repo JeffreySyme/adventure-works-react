@@ -2,7 +2,7 @@ import { PrimaryNavbar, SecondaryNavbar } from './components'
 import Routing from './Routing'
 import useApp from './use-app'
 
-export default function App() {
+export default function() {
    const { breadcrumbs } = useApp()
 
   return (
