@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
-import { ProductCategoriesQuery, ProductCategoryModel, queryProductCategories, QueryResult } from '../../lib'
+import { useState } from 'react'
+import { ProductCategoriesQuery } from '../../lib'
 import { useBreadcrumbs, useTitle } from '../../lib/hooks'
 
 const initialQuery: ProductCategoriesQuery = {
@@ -8,23 +8,16 @@ const initialQuery: ProductCategoriesQuery = {
     count: true,
 }
 
-export default function usePage() {
+export default function() {
     useTitle('Product Categories')
     useBreadcrumbs([
         { text: 'Home', to: '/' },
         { active: true, text: 'Product Categories', to: '/product-categories'},
     ])
-    
+
     const [query] = useState<ProductCategoriesQuery>(initialQuery)
-    const [data, setData] = useState<QueryResult<ProductCategoryModel> | null>()
-
-    const getData = useCallback(async () => {
-        setData(await queryProductCategories(query))
-    }, [query])
-
-    useEffect(() => { getData() }, [getData])
 
     return {
-        data,
+        query,
     }
 }

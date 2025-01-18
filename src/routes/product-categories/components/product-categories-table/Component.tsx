@@ -1,7 +1,7 @@
 import { Table } from 'react-bootstrap'
-import { ProductCategoryModel, QueryResult } from '../../../../lib'
+import { ProductCategoryModel } from '../../../../lib'
 
-export default function Component({
+export default function({
     data,
 }: ComponentProps) {
     return (
@@ -16,7 +16,7 @@ export default function Component({
             </thead>
             <tbody>
                 {
-                    data.data.map((d) => (
+                    data.map((d) => (
                         <tr key={d.productCategoryId}>
                             <td>{d.productCategoryId}</td>
                             <td>{d.parentProductCategoryId ? d.parentProductCategoryId : '-'}</td>
@@ -31,5 +31,5 @@ export default function Component({
 }
 
 interface ComponentProps {
-    data: QueryResult<ProductCategoryModel>
+    data: ProductCategoryModel[]
 }

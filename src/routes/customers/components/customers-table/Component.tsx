@@ -1,5 +1,5 @@
 import { Table } from 'react-bootstrap'
-import { CustomerModel, QueryResult } from '../../../../lib'
+import { CustomerModel } from '../../../../lib'
 
 export default function Component({
     data,
@@ -21,7 +21,7 @@ export default function Component({
             </thead>
             <tbody>
                 {
-                    data.data.map((d) => (
+                    data.map((d) => (
                         <tr key={d.customerId}>
                             <td>{d.customerId}</td>
                             <td>{d.title}</td>
@@ -41,5 +41,5 @@ export default function Component({
 }
 
 interface ComponentProps {
-    data: QueryResult<CustomerModel>
+    data: CustomerModel[]
 }

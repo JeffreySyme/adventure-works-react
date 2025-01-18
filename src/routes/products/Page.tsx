@@ -1,21 +1,20 @@
-import { Container } from 'react-bootstrap'
 import usePage from './use-page'
 import { ProductsTable } from './components'
+import { ODataFetch } from '../../lib/components'
+import { getBaseUrl } from '../../lib/api/base-url'
+import buildQuery from 'odata-query'
+import { ProductModel } from '../../lib'
 
 export default function() {
-    const {
-        data,
-    } = usePage()
-
-    if (data === undefined) {
-        return <div>Loading...</div>
-    } else if (data === null) {
-        return <div>Not Found</div>
-    }
+    const { query } = usePage()
 
     return (
-        <Container fluid>
-            <ProductsTable data={data} />
-        </Container>
+        <ODataFetch url={`${getBaseUrl()}/Products${buildQuery(query)}`}>
+            {
+                (data: { value: ProductModel[]}) => (
+                    <ProductsTable data={data.value} />
+                )
+            }
+        </ODataFetch>
     )
 }

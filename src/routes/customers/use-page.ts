@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
-import { CustomerModel, CustomersQuery, queryCustomers, QueryResult } from '../../lib'
+import { useState } from 'react'
+import { CustomersQuery } from '../../lib'
 import { useBreadcrumbs, useTitle } from '../../lib/hooks'
 
 const initialQuery: CustomersQuery = {
@@ -15,16 +15,9 @@ export default function usePage() {
         { active: true, text: 'Customers', to: '/customers' },
     ])
 
-    const [data, setData] = useState<QueryResult<CustomerModel> | null>()
     const [query] = useState<CustomersQuery>(initialQuery)
 
-    const getData = useCallback(async () => {
-        setData(await queryCustomers(query))
-    }, [query])
-
-    useEffect(() => { getData() }, [getData])
-
     return {
-        data,
+        query,
     }
 }

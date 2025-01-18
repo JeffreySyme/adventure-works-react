@@ -1,24 +1,26 @@
 import { Table } from 'react-bootstrap'
-import { ProductModel, QueryResult } from '../../../../lib'
+import { ProductModel } from '../../../../lib'
 
-export default function({
+export default function ({
     data,
 }: ComponentProps) {
     return (
         <Table>
             <thead>
-                <tr>ID</tr>
-                <tr>Name</tr>
-                <tr>Product Number</tr>
-                <tr>Color</tr>
-                <tr>Standard Cost</tr>
-                <tr>List Price</tr>
-                <tr>Size</tr>
-                <tr>Weight</tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Product Number</th>
+                    <th>Color</th>
+                    <th>Standard Cost</th>
+                    <th>List Price</th>
+                    <th>Size</th>
+                    <th>Weight</th>
+                </tr>
             </thead>
             <tbody>
                 {
-                    data.data.map((d) => (
+                    data.map((d) => (
                         <tr>
                             <td>{d.productId}</td>
                             <td>{d.name}</td>
@@ -37,5 +39,5 @@ export default function({
 }
 
 interface ComponentProps {
-    data: QueryResult<ProductModel>
+    data: ProductModel[]
 }
