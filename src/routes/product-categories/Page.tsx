@@ -1,21 +1,20 @@
 import { ProductCategoriesTable } from './components'
 import usePage from './use-page'
-import { ODataFetch, PageTitle } from '../../lib/components'
-import { ProductCategoryModel } from '../../lib'
+import { PageTitle } from '../../lib/components'
 
 export default function () {
-    const { query } = usePage()
+    const { data } = usePage()
+
+    if (data === undefined) {
+        return <div>Loading...</div>
+    } else if (data === null) {
+        return <div>An error occurred.</div>
+    }
 
     return (
         <>
             <PageTitle>Product Categories</PageTitle>
-            <ODataFetch name='ProductCategories' query={query}>
-                {
-                    (data: { value: ProductCategoryModel[] }) => (
-                        <ProductCategoriesTable data={data.value} />
-                    )
-                }
-            </ODataFetch>
+            <ProductCategoriesTable data={data.data} />
         </>
     )
 }

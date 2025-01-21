@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { CustomerModel, CustomersQuery, QueryResult } from '../../lib'
-import { useBreadcrumbs } from '../../lib/hooks'
-import { getBaseUrl } from '../../lib/api/base-url'
+import { useBreadcrumbs, useHttpGet } from '../../lib/hooks'
 import buildQuery from 'odata-query'
 
 const initialQuery: CustomersQuery = {
@@ -23,7 +22,7 @@ export default function() {
         const result = await httpGet(`/Customers${buildQuery(query)}`)
 
         setData(result ? {
-            data: result.data,
+            data: result.value,
             totalCount: result['@odata.count']
         } : null)
     }, [query])
@@ -33,26 +32,5 @@ export default function() {
     return {
         data,
         query,
-    }
-}
-
-function useHttpGet() {
-    // If using a token for security grab it from the store
-
-    const httpGet = useCallback(async (url: string): Promise<any | null> => {
-        const response = await fetch(`${getBaseUrl()}${url}`, {
-            credentials: 'include',
-            method: 'GET',
-        })
-
-        if (!response.ok) {
-            return null
-        }
-
-        return await response.json()
-    }, [])
-
-    return {
-        httpGet,
     }
 }
