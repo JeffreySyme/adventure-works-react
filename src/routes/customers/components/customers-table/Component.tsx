@@ -1,7 +1,7 @@
 import { Table } from 'react-bootstrap'
 import { CustomerModel } from '../../../../lib'
 
-export default function Component({
+export default function({
     data,
 }: ComponentProps) {
     return (
