@@ -2,11 +2,8 @@ import { PageTitle } from '../../lib/components'
 import usePage from './use-page'
 import { CustomersTable } from './components'
 
-const modelName = 'Customers'
-
 export default function() {
     const { data } = usePage()
-    console.log(data)
 
     if (data === undefined) {
         return <div>Loading...</div>
@@ -16,7 +13,7 @@ export default function() {
 
     return (
         <>
-            <PageTitle>{modelName}</PageTitle>
+            <PageTitle>Customers</PageTitle>
             <CustomersTable data={data.data} />
         </>
     )
