@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useBreadcrumbs, useHttpGet } from '../../lib/hooks'
 import buildQuery from 'odata-query'
-import { CustomerModel, QueryResult } from '../../lib'
+import { CustomerModel, QueryResult, useBreadcrumbs, useHttpGet } from '../../lib'
 
 const initialState = {
     skip: 0,

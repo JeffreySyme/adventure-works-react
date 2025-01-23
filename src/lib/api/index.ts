@@ -1,5 +1,4 @@
 export * from './customers'
-export * from './functions'
 export * from './product-categories'
 export * from './products'
 export * from './sales-orders'

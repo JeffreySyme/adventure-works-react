@@ -3,11 +3,6 @@ import reducer from './reducer'
 import initialState, { State } from './state'
 import { StateAction } from './actions'
 
-export const Context = createContext({} as {
-    state: State
-    dispatch: React.Dispatch<StateAction>
-})
-
 export default function ({ children }: Props) {
     const [state, dispatch] = useReducer(reducer, initialState())
 
@@ -17,6 +12,11 @@ export default function ({ children }: Props) {
         </Context.Provider>
     )
 } 
+
+export const Context = createContext({} as {
+    state: State
+    dispatch: React.Dispatch<StateAction>
+})
 
 interface Props {
     children: any

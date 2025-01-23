@@ -1,4 +1,4 @@
-import { useBreadcrumbs } from '../../lib/hooks'
+import { useBreadcrumbs } from '../../lib/'
 
 export default function() {
     useBreadcrumbs([

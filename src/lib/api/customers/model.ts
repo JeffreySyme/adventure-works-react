@@ -1,3 +1,4 @@
+import { QueryOptions } from 'odata-query'
 import { AddressModel } from '../address-model'
 
 export interface CustomerModel {
@@ -18,3 +19,5 @@ export interface CustomerModel {
 export interface CustomerAddressModel extends AddressModel {
     addressType: string
 }
+
+export type CustomersQuery = Partial<QueryOptions<CustomerModel>>

@@ -1,3 +1,5 @@
+import { QueryOptions } from 'odata-query'
+
 export interface ProductModel {
     productId: number
     name: string
@@ -14,3 +16,5 @@ export interface ProductModel {
     discontinuedDate: string | null
     modifiedDate: string
 }
+
+export type ProductsQuery = Partial<QueryOptions<ProductModel>>

@@ -1,10 +1,9 @@
 import { useCallback, useEffect } from 'react'
-import { useAppSelector } from './store'
 import { useSelector } from './lib'
 
-export default function() {
-    const settings = useSelector((state) => state.system.settings)
-    const breadcrumbs = useAppSelector((state) => state.system.breadcrumbs)
+export default function () {
+    const breadcrumbs = useSelector(state => state.system.breadcrumbs)
+    const settings = useSelector(state => state.system.settings)
 
     const setMode = useCallback(() => {
         const rootElement = document.documentElement
@@ -15,7 +14,6 @@ export default function() {
     useEffect(() => setMode(), [setMode])
 
     return {
-        breadcrumbs,
-        settings,
+        breadcrumbs
     }
 }

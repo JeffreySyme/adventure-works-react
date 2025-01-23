@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { ProductCategoriesQuery, ProductCategoryModel, QueryResult } from '../../lib'
-import { useBreadcrumbs, useHttpGet } from '../../lib/hooks'
+import { ProductCategoriesQuery, ProductCategoryModel, QueryResult, useBreadcrumbs, useHttpGet } from '../../lib'
 import buildQuery from 'odata-query'
 
 const initialQuery: ProductCategoriesQuery = {

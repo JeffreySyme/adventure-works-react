@@ -1,10 +1,10 @@
 import { Breadcrumb, BreadcrumbItem, Container, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router'
-import { BreadcrumbLink } from '../../routes/store'
+import { Breadcrumb as BreadcrumbLink } from '../../lib'
 
 export default function({
     breadcrumbs,
-}: ComponentProps) {
+}: Props) {
     return (
         <Navbar bg="primary-subtle" data-bs-theme="dark">
             <Container fluid>
@@ -26,6 +26,6 @@ export default function({
     )
 }
 
-interface ComponentProps {
+interface Props {
     breadcrumbs: BreadcrumbLink[]
 }

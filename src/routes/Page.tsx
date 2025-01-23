@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import usePage from './use-page'
 import { PageTitle } from '../lib/components'
 
-export default function() {
+export default function () {
     usePage()
 
     return (

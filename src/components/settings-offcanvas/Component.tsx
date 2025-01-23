@@ -4,7 +4,7 @@ import useComponent from './use-componet'
 export default function({
     onHide,
     show,
-}: ComponentProps) {
+}: Props) {
     const {
         onModeChange,
         settings,
@@ -27,7 +27,7 @@ export default function({
     )
 }
 
-interface ComponentProps {
+interface Props {
     onHide: () => void
     show: boolean
 }

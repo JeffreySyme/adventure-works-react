@@ -3,7 +3,7 @@ import { ProductCategoryModel } from '../../../../lib'
 
 export default function({
     data,
-}: ComponentProps) {
+}: Props) {
     return (
         <Table striped borderless hover>
             <thead>
@@ -30,6 +30,6 @@ export default function({
     )
 }
 
-interface ComponentProps {
+interface Props {
     data: ProductCategoryModel[]
 }
