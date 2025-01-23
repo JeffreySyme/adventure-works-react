@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import systemReducer from './routes/store'
-import customersReducer from './routes/customers/store'
 import { useDispatch, useSelector } from 'react-redux'
 
 const store = configureStore({
   reducer: {
     system: systemReducer,
-    customers: customersReducer,
-  },
+  }
 })
 
 export default store

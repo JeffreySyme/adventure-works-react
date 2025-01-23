@@ -1,10 +1,9 @@
 import { useCallback } from 'react'
-import { useAppDispatch, useAppSelector } from '../../store'
-import { setSettings } from '../../routes/store'
+import { setSettings, useDispatch, useSelector } from '../../lib'
 
 export default function() {
-    const settings = useAppSelector((state) => state.system.settings)
-    const dispatch = useAppDispatch()
+    const settings = useSelector((state) => state.system.settings)
+    const dispatch = useDispatch()
 
     const onModeChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setSettings(e.target.checked
