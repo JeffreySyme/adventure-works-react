@@ -1,35 +1,33 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import buildQuery from 'odata-query'
-import { CustomerModel, QueryResult, useBreadcrumbs, useHttpGet } from '../../lib'
-
-const initialState = {
-    skip: 0,
-    top: 50,
-    count: true,
-}
+import { useBreadcrumbs, useDispatch, useHttpGet, useSelector } from '../../lib'
+import { setCustomersQueryResult } from '../../lib/store/customers'
 
 export default function () {
     useBreadcrumbs([
         { text: 'Home', to: '/' },
         { active: true, text: 'Customers', to: '/customers' },
     ])
-    const [data, setData] = useState<QueryResult<CustomerModel> | null>()
-    const [query] = useState(initialState)
+    const queryResult = useSelector(state => state.customers.queryResult)
+    const query = useSelector(state => state.customers.query)
+    const dispatch = useDispatch()
     const { httpGet } = useHttpGet()
 
     const getData = useCallback(async () => {
         const result = await httpGet(`/Customers${buildQuery(query)}`)
 
-        setData(result ? {
-            data: result.value,
-            totalCount: result['@odata.count'],
-        } : null)
+        dispatch(setCustomersQueryResult(
+            result ? {
+                data: result.value,
+                totalCount: result['@odata.count'],
+            } : null
+        ))
     }, [query])
 
     useEffect(() => { getData() }, [getData])
 
     return {
-        data,
+        queryResult,
         query,
     }
 }

@@ -3,18 +3,18 @@ import usePage from './use-page'
 import { CustomersTable } from './components'
 
 export default function() {
-    const { data } = usePage()
+    const { queryResult } = usePage()
 
-    if (data === undefined) {
+    if (queryResult === undefined) {
         return <div>Loading...</div>
-    } else if(data === null) {
+    } else if(queryResult === null) {
         return <div>An error occurred</div>
     }
 
     return (
         <>
             <PageTitle>Customers</PageTitle>
-            <CustomersTable data={data.data} />
+            <CustomersTable data={queryResult.data} />
         </>
     )
 }
