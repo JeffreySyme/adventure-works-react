@@ -11,7 +11,7 @@ export default function () {
         rootElement.setAttribute('data-bs-theme', settings.mode)
     }, [settings])
 
-    useEffect(() => setMode(), [setMode])
+    useEffect(() => { setMode() }, [setMode])
 
     return {
         breadcrumbs

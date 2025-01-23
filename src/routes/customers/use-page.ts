@@ -4,7 +4,7 @@ import { CustomerModel, QueryResult, useBreadcrumbs, useHttpGet } from '../../li
 
 const initialState = {
     skip: 0,
-    take: 50,
+    top: 50,
     count: true,
 }
 
