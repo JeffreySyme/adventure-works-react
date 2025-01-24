@@ -1,4 +1,6 @@
-import { SystemStateAction, SystemState } from './models'
+import { SystemStateAction } from './actions'
+import { SystemState } from './state'
+
 
 export default function (state: SystemState, action: SystemStateAction): SystemState {
     switch (action.type) {

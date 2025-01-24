@@ -1,4 +1,4 @@
-import { CustomersStateAction } from './action'
+import { CustomersStateAction } from './actions'
 import { CustomersState } from './state'
 
 export default function (state: CustomersState, action: CustomersStateAction): CustomersState {
