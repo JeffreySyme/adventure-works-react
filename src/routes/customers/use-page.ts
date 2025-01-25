@@ -24,7 +24,7 @@ export default function () {
         ))
     }, [query])
 
-    useEffect(() => { getData() }, [getData])
+    useEffect(() => { queryResult === undefined && getData() }, [getData])
 
     return {
         queryResult,

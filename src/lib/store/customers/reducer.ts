@@ -7,6 +7,7 @@ export default function (state: CustomersState, action: CustomersStateAction): C
             return {
                 ...state,
                 query: action.payload,
+                queryResult: undefined,
             }
         case 'SET_CUSTOMERS_QUERY_RESULT':
             return {

@@ -7,6 +7,7 @@ export default function (state: ProductCategoriesState, action: ProductCategorie
             return {
                 ...state,
                 query: action.payload,
+                queryResult: undefined,
             }
         case 'SET_PRODUCT_CATEGORIES_QUERY_RESULT':
             return {
